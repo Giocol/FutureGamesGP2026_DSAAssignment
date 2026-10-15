@@ -52,6 +52,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5592b25c44429b914438d9e820ae26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Computer
+  initializationTask: {fileID: 11400000, guid: b24e706c69624a31ae0000000000000b, type: 2}
+  loadEmployeesTask: {fileID: 11400000, guid: b24e706c69624a31ae00000000000001, type: 2}
+  startupTasks:
+  - {fileID: 11400000, guid: b24e706c69624a31ae00000000000002, type: 2}
+  - {fileID: 11400000, guid: b24e706c69624a31ae00000000000003, type: 2}
+  - {fileID: 11400000, guid: b24e706c69624a31ae00000000000004, type: 2}
+  testTask: {fileID: 0}
+  piratedGamesTask: {fileID: 11400000, guid: b24e706c69624a31ae00000000000005, type: 2}
+  openWorklogsTask: {fileID: 11400000, guid: b24e706c69624a31ae00000000000006, type: 2}
+  returnToDesktopTask: {fileID: 11400000, guid: b24e706c69624a31ae00000000000007, type: 2}
+  nextWorklogPageTask: {fileID: 11400000, guid: b24e706c69624a31ae00000000000008, type: 2}
+  previousWorklogPageTask: {fileID: 11400000, guid: b24e706c69624a31ae00000000000009, type: 2}
+  playVSGameTask: {fileID: 11400000, guid: b24e706c69624a31ae0000000000000a, type: 2}
 --- !u!1001 &1440861543908505829
 PrefabInstance:
   m_ObjectHideFlags: 0
