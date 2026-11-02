@@ -44,18 +44,18 @@ namespace Enviroment.Tasks
         public int Partition(Data[] MyEmployees, int MyLeft, int MyRight)
         {
             // Selects the median as the pivot point
-            Pivot = MyEmployees[MyEmployees.Length / 2].employeeId;
+            Pivot = MyEmployees[MyLeft + ((MyRight - MyLeft) / 2)].employeeId;
 
             // Put the median at the end of the array
-            TempEmployee = MyEmployees[MyEmployees.Length / 2];
-            MyEmployees[MyEmployees.Length / 2] = MyEmployees[MyRight];
+            TempEmployee = MyEmployees[MyLeft + ((MyRight - MyLeft) / 2)];
+            MyEmployees[MyLeft + ((MyRight - MyLeft) / 2)] = MyEmployees[MyRight];
             MyEmployees[MyRight] = TempEmployee;
 
             // Lags the i variable
             int i = MyLeft - 1;
 
             // For Loop that goes through the Array
-            for (int j = MyLeft; j < MyRight - 1; j++)
+            for (int j = MyLeft; j <= MyRight - 1; j++)
             {
                 // If the element is less than the pivot
                 if (MyEmployees[j].employeeId < Pivot)
@@ -63,17 +63,17 @@ namespace Enviroment.Tasks
                     // Unlag the i and add 1 to mark it as sorted
                     i = i + 1;
 
-                    // Swap it with 
+                    // Swap it with ???
                     TempEmployee = MyEmployees[i];
                     MyEmployees[i] = MyEmployees[j];
                     MyEmployees[j] = TempEmployee;
                 }
-
-                // Swap it with the element thats higher than pivot with the rightmost element
-                TempEmployee = MyEmployees[i + 1];
-                MyEmployees[i + 1] = MyEmployees[MyRight];
-                MyEmployees[MyRight] = TempEmployee;
             }
+
+            // Swap it with the element thats higher than pivot with the rightmost element
+            TempEmployee = MyEmployees[i + 1];
+            MyEmployees[i + 1] = MyEmployees[MyRight];
+            MyEmployees[MyRight] = TempEmployee;
 
             //Return the solved element
             return i + 1;
