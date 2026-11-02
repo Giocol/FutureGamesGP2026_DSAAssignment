@@ -12,7 +12,7 @@ namespace Enviroment.Tasks
         Data[] ListOfEmployees;
         Data TempEmployee;
         int PivotPoint;
-        int Pivot;
+        DateTime Pivot;
         public override void Execute()
         {
             ListOfEmployees = ReadData.PLEASEWORK.employees;
@@ -44,7 +44,7 @@ namespace Enviroment.Tasks
         public int Partition(Data[] MyEmployees, int MyLeft, int MyRight)
         {
             // Selects the median as the pivot point
-            Pivot = MyEmployees[MyLeft + ((MyRight - MyLeft) / 2)].employeeId;
+            Pivot = MyEmployees[MyLeft + ((MyRight - MyLeft) / 2)].EnteredEngineRoom;
 
             // Put the median at the end of the array
             TempEmployee = MyEmployees[MyLeft + ((MyRight - MyLeft) / 2)];
@@ -58,7 +58,7 @@ namespace Enviroment.Tasks
             for (int j = MyLeft; j <= MyRight - 1; j++)
             {
                 // If the element is less than the pivot
-                if (MyEmployees[j].employeeId < Pivot)
+                if (MyEmployees[j].EnteredEngineRoom < Pivot)
                 {
                     // Unlag the i and add 1 to mark it as sorted
                     i = i + 1;

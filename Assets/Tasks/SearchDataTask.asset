@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722b8e441da75f946be2e89cbd4baa60, type: 3}
+  m_Name: SearchDataTask
+  m_EditorClassIdentifier: Assembly-CSharp::Enviroment.Tasks.SearchingTask
+  ReadData: {fileID: 11400000, guid: 02b4eff9a18279d488ce4e57b6f88435, type: 2}
+  Year: 2234
+  Month: 08
+  Day: 09
+  Hour: 22
+  Minutes: 13
+  Seconds: 17

@@ -19,6 +19,8 @@ namespace Environment.Tasks
         public bool hasEngineRoomClearance;
         public string lastEntranceInEngineRoom;
         public string lastExitFromEngineRoom;
+        public DateTime EnteredEngineRoom;
+        public DateTime ExitingEngineRoom;
     }
 
     [CreateAssetMenu(fileName = "ReadDataTask", menuName = "Read Data Task")]
@@ -33,6 +35,7 @@ namespace Environment.Tasks
         {
             Read();
             Solve(Json);
+            Convert();
         }
 
         public void Read()
@@ -49,6 +52,18 @@ namespace Environment.Tasks
             PLEASEWORK = new EmployeeList();
             JsonUtility.FromJsonOverwrite(MyString, PLEASEWORK);
             return MyString;
+        }
+
+        public void Convert()
+        {
+            foreach (Data Employee in PLEASEWORK.employees)
+            {
+                Employee.EnteredEngineRoom = DateTime.ParseExact(Employee.lastEntranceInEngineRoom, "yyyy-MM-ddTHH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+
+                Employee.ExitingEngineRoom = DateTime.ParseExact(Employee.lastExitFromEngineRoom, "yyyy-MM-ddTHH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+
+                Debug.Log(Employee.EnteredEngineRoom + "\n" + Employee.ExitingEngineRoom);
+            }
         }
     }
 }
