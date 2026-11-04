@@ -13,9 +13,71 @@ MonoBehaviour:
   m_Name: SearchDataTask
   m_EditorClassIdentifier: Assembly-CSharp::Enviroment.Tasks.SearchingTask
   ReadData: {fileID: 11400000, guid: 02b4eff9a18279d488ce4e57b6f88435, type: 2}
-  Year: 2234
-  Month: 08
-  Day: 09
-  Hour: 22
-  Minutes: 13
-  Seconds: 17
+  EarlyYear: 2234
+  EarlyMonth: 08
+  EarlyDay: 09
+  EarlyHour: 18
+  EarlyMinutes: 00
+  EarlySeconds: 17
+  LateYear: 2234
+  LateMonth: 08
+  LateDay: 09
+  LateHour: 21
+  LateMinutes: 45
+  LateSeconds: 24
+  ResultedEmployees:
+  - name: Helena Graves
+    employeeId: 78
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T18:00:17
+    lastExitFromEngineRoom: 2234-08-04T15:15:53
+  - name: Clara Holloway
+    employeeId: 665
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T18:38:26
+    lastExitFromEngineRoom: 2234-08-02T12:56:21
+  - name: Alfred Kingsley
+    employeeId: 61
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T18:43:37
+    lastExitFromEngineRoom: 2234-08-06T08:12:23
+  - name: Clara Takamura
+    employeeId: 180
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T18:54:52
+    lastExitFromEngineRoom: 2234-08-04T15:40:44
+  - name: Miles Graves
+    employeeId: 481
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T19:06:03
+    lastExitFromEngineRoom: 2234-08-04T16:31:35
+  - name: Beatrice Whitlock
+    employeeId: 98
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T20:51:56
+    lastExitFromEngineRoom: 2234-08-01T06:03:27
+  - name: Nem Pugsley
+    employeeId: 447
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T20:57:36
+    lastExitFromEngineRoom: 2234-08-04T21:36:45
+  - name: Jasper Underwood
+    employeeId: 114
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T21:26:35
+    lastExitFromEngineRoom: 2234-08-07T01:05:19
+  - name: Florence Graves
+    employeeId: 547
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T21:27:20
+    lastExitFromEngineRoom: 2234-08-02T20:56:25
+  - name: Oscar Kingsley
+    employeeId: 378
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T21:41:54
+    lastExitFromEngineRoom: 2234-08-02T12:22:40
+  - name: River Thornfield
+    employeeId: 312
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T21:45:24
+    lastExitFromEngineRoom: 2234-08-05T19:26:48

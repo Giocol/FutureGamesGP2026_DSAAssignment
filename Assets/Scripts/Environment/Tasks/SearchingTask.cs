@@ -1,6 +1,7 @@
 using Environment.Tasks;
 using JetBrains.Annotations;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Enviroment.Tasks
@@ -10,27 +11,50 @@ namespace Enviroment.Tasks
     {
         [SerializeField] DataReader ReadData;
 
-        [Header("Desired Entrance Time")]
-        [SerializeField] string Year;
-        [SerializeField] string Month;
-        [SerializeField] string Day;
-        [SerializeField] string Hour;
-        [SerializeField] string Minutes;
-        [SerializeField] string Seconds;
+        [Header("Desired Earliest Entrance Time")]
+        [SerializeField] string EarlyYear;
+        [SerializeField] string EarlyMonth;
+        [SerializeField] string EarlyDay;
+        [SerializeField] string EarlyHour;
+        [SerializeField] string EarlyMinutes;
+        [SerializeField] string EarlySeconds;
+
+        [Header("Desired Latest Entrance Time")]
+        [SerializeField] string LateYear;
+        [SerializeField] string LateMonth;
+        [SerializeField] string LateDay;
+        [SerializeField] string LateHour;
+        [SerializeField] string LateMinutes;
+        [SerializeField] string LateSeconds;
+
+        [Header("Results")]
+        [SerializeField] List<Data> ResultedEmployees = new List<Data>();
+
         Data[] ListOfEmployees;
         DateTime DesiredData;
-        int Result;
+        int EarlyResult;
+        int LateResult;
         public override void Execute()
         {
-            string TempDate = ($"{Year}-{Month}-{Day}T{Hour}:{Minutes}:{Seconds}");
-            DesiredData = DateTime.ParseExact(TempDate, "yyyy-MM-ddTHH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+            ResultedEmployees.Clear();
 
             ListOfEmployees = ReadData.PLEASEWORK.employees;
-            Result = BinarySearch(ListOfEmployees, DesiredData);
+            string TempDate;
 
-            Debug.Log(DesiredData);
-            Debug.Log(Result);
-            Debug.Log(ListOfEmployees[Result].name);
+            TempDate = ($"{EarlyYear}-{EarlyMonth}-{EarlyDay}T{EarlyHour}:{EarlyMinutes}:{EarlySeconds}");
+            DesiredData = DateTime.ParseExact(TempDate, "yyyy-MM-ddTHH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+            
+            EarlyResult = BinarySearch(ListOfEmployees, DesiredData);
+
+            TempDate = ($"{LateYear}-{LateMonth}-{LateDay}T{LateHour}:{LateMinutes}:{LateSeconds}");
+            DesiredData = DateTime.ParseExact(TempDate, "yyyy-MM-ddTHH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+
+            LateResult = BinarySearch(ListOfEmployees, DesiredData);
+
+            for (int i = EarlyResult; i <= LateResult; i++)
+            {
+                ResultedEmployees.Add(ListOfEmployees[i]);
+            }
         }
         public int BinarySearch(Data[] MyEmployees, DateTime MyDesire)
         {
