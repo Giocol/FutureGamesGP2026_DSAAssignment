@@ -60,10 +60,11 @@ namespace Enviroment.Tasks
         {
             int Lowest = 0;
             int Highest = MyEmployees.Length - 1;
+            int Median = 0;
 
             while (Lowest <= Highest)
             {
-                int Median = Lowest + (Highest - Lowest) / 2;
+                Median = Lowest + (Highest - Lowest) / 2;
                 
                 if (MyEmployees[Median].EnteredEngineRoom == MyDesire)
                 {
@@ -80,7 +81,7 @@ namespace Enviroment.Tasks
                 }
             }
 
-            return -1;
+            return Median;
         }
     }
 }
