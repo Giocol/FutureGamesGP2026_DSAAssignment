@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722b8e441da75f946be2e89cbd4baa60, type: 3}
+  m_Name: SearchDataTask
+  m_EditorClassIdentifier: Assembly-CSharp::Enviroment.Tasks.SearchingTask
+  ReadData: {fileID: 11400000, guid: 02b4eff9a18279d488ce4e57b6f88435, type: 2}
+  EarlyYear: 2234
+  EarlyMonth: 08
+  EarlyDay: 09
+  EarlyHour: 12
+  EarlyMinutes: 00
+  EarlySeconds: 20
+  LateYear: 2234
+  LateMonth: 08
+  LateDay: 09
+  LateHour: 14
+  LateMinutes: 45
+  LateSeconds: 24
+  ResultedEmployees:
+  - name: Malcom Thornfield
+    employeeId: 673
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T11:58:46
+    lastExitFromEngineRoom: 2234-08-04T17:19:23
+  - name: Miles Wellington
+    employeeId: 87
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T12:23:21
+    lastExitFromEngineRoom: 2234-08-08T04:24:02
+  - name: Clara Underwood
+    employeeId: 209
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T12:50:10
+    lastExitFromEngineRoom: 2234-08-08T19:59:18
+  - name: Miles Takamura
+    employeeId: 445
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T12:53:55
+    lastExitFromEngineRoom: 2234-08-04T05:32:01
+  - name: Florence Wellington
+    employeeId: 656
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T13:00:37
+    lastExitFromEngineRoom: 2234-08-09T14:24:19
+  - name: Alfred Rivers
+    employeeId: 371
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T14:13:40
+    lastExitFromEngineRoom: 2234-08-07T00:29:09
+  - name: Sylvia Wickham
+    employeeId: 499
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T14:20:00
+    lastExitFromEngineRoom: 2234-08-09T19:42:32
+  - name: Theodore Sterling
+    employeeId: 501
+    hasEngineRoomClearance: 1
+    lastEntranceInEngineRoom: 2234-08-09T15:19:02
+    lastExitFromEngineRoom: 2234-08-06T08:23:05
