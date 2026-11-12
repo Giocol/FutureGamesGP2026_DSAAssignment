@@ -1,6 +1,7 @@
 using Environment.Tasks;
 using System;
 using UnityEngine;
+using Utilities;
 
 namespace Enviroment.Tasks
 {
@@ -8,28 +9,47 @@ namespace Enviroment.Tasks
     public class BinaryTreeTask : Task
     {
         [SerializeField] DataReader ReadData;
+         BST BinarySearchTree;
         public override void Execute()
         {
-
+            BinarySearchTree = new BST();
+            BinarySearchTree.Tree = BinarySearchTree.BinaryTreeMaker(ReadData.PLEASEWORK, 0, ReadData.PLEASEWORK.employees.Length - 1);
+            BinarySearchTree.BFS(BinarySearchTree.Tree);
         }
     }
 
     public class BST
     {
-        BSTNode Tree;
-    }
+        public BSTNode Tree;
 
-    public class BSTNode
-    {
-        public DateTime Value;
-        public BSTNode Left;
-        public BSTNode Right;
+        public void BFS(BSTNode MyRoot)
+        {
+            GenericQueue<BSTNode> Queue = new GenericQueue<BSTNode>();
+            Queue.Enqueue(MyRoot);
 
+            while (Queue.Queue.Count > 0)
+            {
+                BSTNode Node = Queue.Dequeue();
+                Debug.Log(Node.Value);
+
+                if (Node.Left != null)
+                {
+                    Queue.Enqueue(Node.Left);
+                }
+
+                if (Node.Left != null)
+                {
+                    Queue.Enqueue(Node.Left);
+                }
+            }
+        }
         public BSTNode BinaryTreeMaker(EmployeeList Employees, int Lowest, int Highest)
         {
             BSTNode Result = new BSTNode();
 
             int Median = Lowest + (Highest - Lowest) / 2;
+
+            Result.Employee = Employees.employees[Median];
             
             Result.Value = Employees.employees[Median].EnteredEngineRoom;
 
@@ -41,5 +61,13 @@ namespace Enviroment.Tasks
 
             return Result;
         }
+    }
+    public class BSTNode
+    {
+        public Data Employee;
+        public DateTime Value;
+        public BSTNode Left;
+        public BSTNode Right;
+
     }
 }
