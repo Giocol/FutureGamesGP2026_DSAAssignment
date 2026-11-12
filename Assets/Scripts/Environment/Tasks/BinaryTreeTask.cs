@@ -37,14 +37,19 @@ namespace Enviroment.Tasks
                     Queue.Enqueue(Node.Left);
                 }
 
-                if (Node.Left != null)
+                if (Node.Right != null)
                 {
-                    Queue.Enqueue(Node.Left);
+                    Queue.Enqueue(Node.Right);
                 }
             }
         }
         public BSTNode BinaryTreeMaker(EmployeeList Employees, int Lowest, int Highest)
         {
+            if (Lowest > Highest)
+            {
+                return null;
+            }
+
             BSTNode Result = new BSTNode();
 
             int Median = Lowest + (Highest - Lowest) / 2;
@@ -52,12 +57,8 @@ namespace Enviroment.Tasks
             Result.Employee = Employees.employees[Median];
 
             Result.Value = Employees.employees[Median].EnteredEngineRoom;
-
-            if (!(Lowest >= Highest - 1))
-            {
-                Result.Right = BinaryTreeMaker(Employees, Median + 1, Highest);
-                Result.Left = BinaryTreeMaker(Employees, Lowest, Median - 1);
-            }
+            Result.Right = BinaryTreeMaker(Employees, Median + 1, Highest);
+            Result.Left = BinaryTreeMaker(Employees, Lowest, Median - 1);
 
             return Result;
         }
