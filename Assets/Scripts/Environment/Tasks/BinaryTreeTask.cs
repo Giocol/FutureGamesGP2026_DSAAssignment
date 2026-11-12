@@ -9,7 +9,7 @@ namespace Enviroment.Tasks
     public class BinaryTreeTask : Task
     {
         [SerializeField] DataReader ReadData;
-         BST BinarySearchTree;
+        BST BinarySearchTree;
         public override void Execute()
         {
             BinarySearchTree = new BST();
@@ -50,10 +50,10 @@ namespace Enviroment.Tasks
             int Median = Lowest + (Highest - Lowest) / 2;
 
             Result.Employee = Employees.employees[Median];
-            
+
             Result.Value = Employees.employees[Median].EnteredEngineRoom;
 
-            if (Lowest != Highest)
+            if (!(Lowest >= Highest - 1))
             {
                 Result.Right = BinaryTreeMaker(Employees, Median + 1, Highest);
                 Result.Left = BinaryTreeMaker(Employees, Lowest, Median - 1);

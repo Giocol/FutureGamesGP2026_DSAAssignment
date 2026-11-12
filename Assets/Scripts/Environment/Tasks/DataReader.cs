@@ -41,10 +41,8 @@ namespace Environment.Tasks
         public void Read()
         {
             FilePath = Path.Combine(Application.streamingAssetsPath, FileName);
-            Debug.Log(FilePath);
 
             Json = File.ReadAllText(FilePath);
-            Debug.Log(Json);
         }
 
         public string Solve(string MyString)
@@ -61,8 +59,6 @@ namespace Environment.Tasks
                 Employee.EnteredEngineRoom = DateTime.ParseExact(Employee.lastEntranceInEngineRoom, "yyyy-MM-ddTHH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
 
                 Employee.ExitingEngineRoom = DateTime.ParseExact(Employee.lastExitFromEngineRoom, "yyyy-MM-ddTHH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
-
-                Debug.Log(Employee.EnteredEngineRoom + "\n" + Employee.ExitingEngineRoom);
             }
         }
     }
