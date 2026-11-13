@@ -1,5 +1,6 @@
 using Environment.Tasks;
 using System;
+using System.Diagnostics;
 using UnityEngine;
 using Utilities;
 
@@ -10,11 +11,16 @@ namespace Enviroment.Tasks
     {
         [SerializeField] DataReader ReadData;
         BST BinarySearchTree;
+        Stopwatch Stopwatch;
         public override void Execute()
         {
+            Stopwatch = new Stopwatch();
+            Stopwatch.Start();
             BinarySearchTree = new BST();
             BinarySearchTree.Tree = BinarySearchTree.BinaryTreeMaker(ReadData.PLEASEWORK, 0, ReadData.PLEASEWORK.employees.Length - 1);
             BinarySearchTree.BFS(BinarySearchTree.Tree);
+            Stopwatch.Stop();
+            UnityEngine.Debug.Log(Stopwatch.Elapsed);
         }
     }
 
@@ -30,7 +36,7 @@ namespace Enviroment.Tasks
             while (Queue.Queue.Count > 0)
             {
                 BSTNode Node = Queue.Dequeue();
-                Debug.Log(Node.Value);
+                //Debug.Log(Node.Value);
 
                 if (Node.Left != null)
                 {

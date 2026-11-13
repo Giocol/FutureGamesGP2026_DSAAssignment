@@ -2,6 +2,7 @@ using Environment.Tasks;
 using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 namespace Enviroment.Tasks
@@ -32,10 +33,13 @@ namespace Enviroment.Tasks
 
         Data[] ListOfEmployees;
         DateTime DesiredData;
+        Stopwatch StopWatch;
         int EarlyResult;
         int LateResult;
         public override void Execute()
         {
+            StopWatch = new Stopwatch();
+            StopWatch.Start();
             ResultedEmployees.Clear();
 
             ListOfEmployees = ReadData.PLEASEWORK.employees;
@@ -55,6 +59,8 @@ namespace Enviroment.Tasks
             {
                 ResultedEmployees.Add(ListOfEmployees[i]);
             }
+            StopWatch.Stop();
+            UnityEngine.Debug.Log(StopWatch.Elapsed);
         }
         public int BinarySearch(Data[] MyEmployees, DateTime MyDesire)
         {
