@@ -1,5 +1,7 @@
-namespace Environment {
-    public interface IInteractable {
+namespace Environment
+{
+    public interface IInteractable
+    {
         abstract void OnInteract();
     }
 }
